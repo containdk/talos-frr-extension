@@ -20,6 +20,8 @@ container:
     options:
       - bind
       - rw
+    uid: 100
+    gid: 101
   - source: /var/tmp
     destination: /var/tmp
     type: bind
