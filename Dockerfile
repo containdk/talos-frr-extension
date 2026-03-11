@@ -16,6 +16,7 @@ EOF
 
 # Grab the official image to cherry-pick the static binary and certificates
 FROM quay.io/frrouting/frr:10.5.2@sha256:94e78424a15839e0953623e2515c3e54f308644946395bc341b25e43f5c2d323 AS dist
+RUN [ -r /etc/frr/vtysh.conf ] || touch /etc/frr/vtysh.conf
 
 FROM scratch
 
