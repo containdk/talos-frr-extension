@@ -1,6 +1,5 @@
 name: frr
 depends:
-  - service: cri
   - network:
       - addresses
       - etcfiles
