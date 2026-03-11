@@ -1,0 +1,17 @@
+name: frr
+depends:
+  - service: cri
+  - network:
+      - addresses
+      - etcfiles
+      - hostname
+  - configuration: true
+container:
+  entrypoint: /sbin/tini
+  args:
+    - --
+    - /usr/lib/frr/docker-start
+  security:
+    writeableRootfs: false
+    writeableSysfs: true
+restart: always
