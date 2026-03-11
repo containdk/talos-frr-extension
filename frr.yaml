@@ -13,4 +13,17 @@ container:
   security:
     writeableRootfs: false
     writeableSysfs: true
+  mounts:
+  - source: /var/run/frr
+    destination: /var/run/frr
+    type: bind
+    options:
+      - bind
+      - rw
+  - source: /var/tmp
+    destination: /var/tmp
+    type: bind
+    options:
+      - bind
+      - rw
 restart: always

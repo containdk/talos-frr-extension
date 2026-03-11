@@ -8,7 +8,7 @@ metadata:
   version: "${VERSION}"
   author: Netic
   description: |
-    [network] Provides a frr routing daemon running on the host
+    [contrib] Provides a frr routing daemon running on the host
   compatibility:
     talos:
       version: ">= v1.12.0"
