@@ -20,7 +20,7 @@ container:
     options:
       - bind
       - rw
-  - source: /var/tmp
+  - source: /tmp
     destination: /var/tmp
     type: bind
     options:
