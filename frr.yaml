@@ -20,6 +20,12 @@ container:
     options:
       - bind
       - rw
+  - source: /var/lib/frr
+    destination: /var/lib/frr
+    type: bind
+    options:
+      - bind
+      - rw
   - source: /tmp
     destination: /var/tmp
     type: bind
