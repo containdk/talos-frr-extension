@@ -20,7 +20,7 @@ container:
     options:
       - bind
       - rw
-  - source: /var/lib/frr
+  - source: /var/run/frr
     destination: /var/lib/frr
     type: bind
     options:
