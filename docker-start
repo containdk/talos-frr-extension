@@ -17,5 +17,19 @@ else
         }
 fi
 
-source /usr/lib/frr/frrcommon.sh
-/usr/lib/frr/watchfrr $(daemon_list)
+#source /usr/lib/frr/frrcommon.sh
+#/usr/lib/frr/watchfrr $(daemon_list)
+
+/usr/lib/frr/frrinit.sh start
+
+while true
+do
+  if ! ip -6 route show default | grep -q "proto bgp"; then
+    # Clear the BGP session softly to re-push the RIB to the kernel
+    log_warning_msg "Could not find default route clearing BGP sessions"
+    /usr/bin/vtysh -c "clear ip bgp * soft out"
+    /usr/bin/vtysh -c "clear ipv6 bgp * soft out"
+  fi
+
+  sleep 60
+done
