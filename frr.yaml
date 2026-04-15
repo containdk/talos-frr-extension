@@ -14,13 +14,19 @@ container:
     writeableRootfs: false
     writeableSysfs: true
   mounts:
-  - source: /var/run/frr
+  - source: /var/run/frr/run
     destination: /var/run/frr
     type: bind
     options:
       - bind
       - rw
-  - source: /var/tmp
+  - source: /var/run/frr/lib
+    destination: /var/lib/frr
+    type: bind
+    options:
+      - bind
+      - rw
+  - source: /tmp
     destination: /var/tmp
     type: bind
     options:
