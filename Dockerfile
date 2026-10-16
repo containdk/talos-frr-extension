@@ -15,7 +15,7 @@ metadata:
 EOF
 
 # Grab the official image to use as base of extension
-FROM quay.io/frrouting/frr:10.7.0@sha256:65e5967b922572c0565d968388fb06af69d7e9b3b3eea40ad7e3810687667f68 AS dist
+FROM quay.io/frrouting/frr:10.7.1@sha256:e995beaa50fdc9edb35eadcfefa29b7f062cc06f2b812613789b68fa541554d2 AS dist
 RUN [ -r /etc/frr/vtysh.conf ] || touch /etc/frr/vtysh.conf
 COPY docker-start /usr/lib/frr/docker-start
 
